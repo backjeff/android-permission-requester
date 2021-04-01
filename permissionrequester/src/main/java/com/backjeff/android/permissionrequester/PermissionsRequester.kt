@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 class PermissionsRequester<F>(
     private val fragmentListener: F,
     private val permissions: Array<String>
-) where F : Fragment, F : RequestPermissionListener {
+) where F : Fragment, F : PermissionRequesterListener {
 
     fun checkPermissions() {
         if (allPermissionsGranted()) {
@@ -76,7 +76,7 @@ class PermissionsRequester<F>(
     }
 }
 
-interface RequestPermissionListener {
-    fun onRequestPermissionGranted()
-    fun onRequestPermissionDenied(isDefinitive: Boolean)
+interface PermissionRequesterListener {
+    fun onRequestPermissionGranted() { /* empty */ }
+    fun onRequestPermissionDenied(isDefinitive: Boolean) { /* empty */ }
 }
