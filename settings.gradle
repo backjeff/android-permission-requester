@@ -1,0 +1,3 @@
+include ':permissionrequester'
+include ':app'
+rootProject.name = "PermissionRequester"
